@@ -1,0 +1,10 @@
+service: main
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${opt:stage,'dev'}
+functions:
+  api:
+    handler: serverlessHandler.main
+    events:
+      - http: ANY {proxy+}
