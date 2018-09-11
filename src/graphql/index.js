@@ -7,7 +7,7 @@ const {
   mocks: userMocks
 } = require("./User");
 
-const MOCKS = process.env.MOCKS; // || true;
+const MOCKS = process.env.MOCKS; //|| true;
 
 const Query = gql`
   type Query {

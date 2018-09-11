@@ -2,6 +2,7 @@ const { gql } = require("apollo-server");
 
 module.exports = gql`
   extend type Query {
+    me: User
     user(id: String!): User
     users(
       limit: Int
@@ -14,19 +15,20 @@ module.exports = gql`
   }
 
   extend type Mutation {
+    login(email: String!, password: String!): AccessToken
+
     addUser(
-      username: String!
       email: String!
+      username: String!
       password: String!
       firstName: String
       lastName: String
-      phone: String
       userStatus: Int
+      phone: String
       image: String
     ): User
 
     updateUser(
-      id: String!
       username: String
       email: String
       password: String
@@ -37,19 +39,23 @@ module.exports = gql`
       image: String
     ): User
 
-    rmUser(id: String!): Boolean
+    rmUser: Boolean
   }
 
   type User {
     _id: String
-    username: String!
-    email: String!
-    password: String!
+    username: String
+    email: String
+    password: String
     firstName: String
     lastName: String
     fullName: String
     phone: String
     userStatus: Int
     image: String
+  }
+
+  type AccessToken {
+    token: String
   }
 `;
