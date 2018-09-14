@@ -12,21 +12,25 @@ const MOCKS = process.env.MOCKS; //|| true;
 const Query = gql`
   type Query {
     active: Boolean
+    ready: Boolean
   }
 `;
 
 const Mutation = gql`
   type Mutation {
     active: Boolean
+    ready: Boolean
   }
 `;
 
 const activeResolvers = {
   Query: {
-    active: () => true
+    active: () => true,
+    ready: () => true
   },
   Mutation: {
-    active: () => true
+    active: () => true,
+    ready: () => true
   }
 };
 

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "node src/app.js",
+    "start:watch": "nodemon src/app.js",
     "dev": "ttg run \"nodemon --exec 'npm run lint && npm test && npm start'\"",
     "lint": "./node_modules/.bin/eslint ."
   },
@@ -26,6 +27,7 @@
     "casual": "^1.5.19",
     "eslint": "^5.5.0",
     "jest": "^23.5.0",
+    "nodemon": "^1.18.4",
     "pre-commit": "^1.2.2",
     "serverless": "^1.30.3"
   },
