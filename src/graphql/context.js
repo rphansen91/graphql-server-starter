@@ -1,4 +1,4 @@
-module.exports = root => {
-  const token = root.req.headers["x-auth-token"];
+module.exports = () => {
+  // const token = root.req.headers["x-auth-token"];
   return {};
 };
